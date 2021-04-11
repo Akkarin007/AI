@@ -23,6 +23,8 @@ public class A_Star {
 	public static Deque<Board> aStar(Board startBoard) {
 		if (startBoard.isSolved())
 			return new LinkedList<>();
+		Board start = startBoard;
+
 		
 		return null; // Keine Lösung
 	}
