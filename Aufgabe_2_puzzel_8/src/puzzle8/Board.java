@@ -129,11 +129,11 @@ public class Board {
             if (board[i] == 0) {
                 continue;
             }
-            int destination_column = i % 3;
-            int destination_row = i / 3;
+            int current_column = i % 3;
+            int current_row = i / 3;
 
-            int current_column = board[i] % 3;
-            int current_row = board[i] / 3;
+            int destination_column = board[i] % 3;
+            int destination_row = board[i] / 3;
 
             summe_manhattan_distance += Math.abs(destination_column - current_column) +
                     Math.abs(destination_row - current_row);
@@ -148,7 +148,18 @@ public class Board {
      */
     public List<Board> possibleActions() {
         List<Board> boardList = new LinkedList<>();
-        // ...
+
+        int[] mask = new int[]{0, 1, 0, 1, 0, 1, 0, 1, 0};
+
+        for (int i = 0; i < this.board.length; i++) {
+            if (this.board[i] == 0){
+                int current_column = i % 3;
+                int current_row = i / 3;
+
+            }
+        }
+
+
         return boardList;
     }
 
@@ -161,7 +172,7 @@ public class Board {
     public boolean isSolved() {
         int[] goal = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8};
         for (int i = 0; i < N + 1; i++) {
-            if(this.board[i] != goal[i]){
+            if (this.board[i] != goal[i]) {
                 return false;
             }
         }
