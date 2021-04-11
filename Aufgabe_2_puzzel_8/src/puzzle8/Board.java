@@ -36,10 +36,6 @@ public class Board {
                 count += 1;
             }
         } while (list.size() < N + 1);
-
-        for (int i = 0; i < N + 1; i++) {
-            this.board[i] = list.get(i);
-        }
     }
 
     /**
@@ -163,6 +159,12 @@ public class Board {
      * @return true, falls Board Ziestzustand (d.h. 0,1,2,3,4,5,6,7,8)
      */
     public boolean isSolved() {
+        int[] goal = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8};
+        for (int i = 0; i < N + 1; i++) {
+            if(this.board[i] != goal[i]){
+                return false;
+            }
+        }
         return true;
     }
 
