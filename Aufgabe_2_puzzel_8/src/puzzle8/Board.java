@@ -149,18 +149,44 @@ public class Board {
     public List<Board> possibleActions() {
         List<Board> boardList = new LinkedList<>();
 
-        int[] mask = new int[]{0, 1, 0, 1, 0, 1, 0, 1, 0};
-
+        int empty_cell_index = 0;
+        int empty_cell_row = 0;
+        int empty_cell_column = 0;
         for (int i = 0; i < this.board.length; i++) {
             if (this.board[i] == 0){
-                int current_column = i % 3;
-                int current_row = i / 3;
-
+                empty_cell_index = i;
+                empty_cell_row = i % 3;
+                empty_cell_column = i / 3;
             }
         }
 
+        if (check_index_inbound(empty_cell_column + 1)) {
+            boardList.add(generate_next_moves(empty_cell_index, empty_cell_row, empty_cell_column + 1));
+        }
+        if (check_index_inbound(empty_cell_column - 1)) {
+            boardList.add(generate_next_moves(empty_cell_index, empty_cell_row, empty_cell_column - 1));
+        }
+        if (check_index_inbound(empty_cell_row + 1)) {
+            boardList.add(generate_next_moves(empty_cell_index, empty_cell_row + 1, empty_cell_column));
+        }
+        if (check_index_inbound(empty_cell_row - 1)) {
+            boardList.add(generate_next_moves(empty_cell_index, empty_cell_row - 1, empty_cell_column));
+        }
 
         return boardList;
+    }
+
+    public Board generate_next_moves(int empty_cell_index, int dest_cell_row, int dest_cell_column) {
+        int[] tmp_board = this.board.clone();
+        int tmp = tmp_board[empty_cell_index];
+        int dest_cell_index = dest_cell_row + dest_cell_column * 3;
+        tmp_board[empty_cell_index] = tmp_board[dest_cell_index];
+        tmp_board[dest_cell_index] = tmp;
+        return new Board(tmp_board);
+    }
+
+    public Boolean check_index_inbound(int index) {
+        return (index < 3) && (index >= 0);
     }
 
 
