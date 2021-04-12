@@ -1,0 +1,45 @@
+A1:
+a) Welche Parität hat der Zustand S in Abb. 1?
+    Ausgang: 7, 2, 4, 5, 6, 8, 3, 1
+    Falsche Zahlenpaare: (2, 7), (4, 7), (5, 7), (6, 7), (3, 7), (3, 4), (3, 5), (3, 6), (3, 8), (1, 7), (1, 2), (1, 4), (1, 5), (1, 6), (1, 8), (1, 3)
+        => 16 Paare und damit ist die Parität gerade
+b) Implementieren Sie eine Funktion zur Berechnung der Parität eines Zustands.
+    In Class Board parity() zu finden.
+
+
+A2:
+    Definition: Eine Heuristik h heisst
+                monoton, falls
+                h(n) ≤ c(n,n‘) + h(n‘).
+                Dabei sind c(n,n‘) die Kosten um
+                vom Knoten n zu n‘ zu kommen.
+
+a) Für einen Zustand z ist h1(z) die Anzahl der falsch platzierten Steine in Bezug auf den
+    Zielzustand. In Abb. 1 ist h1(S) = 8. Wieso ist h1 eine monotone Heuristik?
+
+
+b) Für einen Zustand z ist h2(z) die Summe der Manhattan-Distanzen der Steine von ihren
+    Zielpositionen. In Abb. 1 ist h2(S) = 3 + 1 + 2 + 2 + 2 + 3 + 3 + 2 = 18. Wieso ist h2 eine
+    monotone Heuristik?
+
+    -> Bei einer monotonen Heuristik sind die Were von f(n) entlang eines suchpfades monoton steigend.
+    f(A) <= f(B) <= f(C) <= ... (f ist monoton)
+
+    Eine Heuristik h heisst zulässig, falls h(n) <= h*(n), dabei sind h*(n) die tatsächlichen Kosten vom Knoten n bis zum Ziel.
+    - Eine zulässige Heuristik ist damit optimistisch. Beispiel Luftlinienabstand
+
+
+
+c) Wieso ist h1(n) ≤ h2(n)? Welche Heuristik ist also besser?
+
+d) Implementieren Sie beide Heuristiken.
+
+
+Aufgabe 3Suchverfahren IDS und A*(60 %)
+a)Implementieren Sie Suchverfahren für das 8-Puzzle in zwei Varianten:
+•Iterativ vertiefende Suche(iterative deepening depth-first searchIDS).
+•A* mit einer der Heuristiken aus Aufgabe 2.Gerne dürfen Sie auch eine andere Heuristik einsetzen.
+Ausgangspunkt ist die in der Vorlesung besprochene uniforme Kostensuche auf S. 2-42, die um eine Heuristik erweitert wird.
+b)Testen  Sie  IhreSuchverfahrenfür  zufällig  generierte  Startzustände.  Beachten  Sie  dabei  die Paritätsüberlegung in Aufgabe 1.
+c)Bestimmen Sie die Anzahl der vom Suchverfahren generierten Zuständeund die Länge der Lösungsfolge für verschiedene Startzustände.
+d)Sind Ihre Zugfolgen optimal?Wenn ja, warum?e)Welches  Problem könnteentstehen  (nicht  ausprobieren!),  falls  A*  für  die  Lösung  des  15-Puzzle eingesetzt werden würde?
