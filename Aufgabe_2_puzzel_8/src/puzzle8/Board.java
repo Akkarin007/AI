@@ -197,12 +197,7 @@ public class Board {
      */
     public boolean isSolved() {
         int[] goal = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8};
-        for (int i = 0; i < N + 1; i++) {
-            if (this.board[i] != goal[i]) {
-                return false;
-            }
-        }
-        return true;
+        return Arrays.equals(board, goal);
     }
 
 

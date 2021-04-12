@@ -1,5 +1,6 @@
 package puzzle8;
 
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -11,8 +12,40 @@ import java.util.LinkedList;
 public class IDFS {
 
 	private static Deque<Board> dfs(Board curBoard, Deque<Board> path, int limit) {
-		// ...
-		return null;
+		if (curBoard.isSolved()) {
+			return path; 			// Lösung
+		} else if (limit == 0) {
+			return null; 			// Maximal zulässige Rekursionstiefe erreicht
+		} else {
+			boolean cutOffOccurred = false;
+			for(Board child: curBoard.possibleActions()) {
+				if (is_in_deque(path, child)) {
+					continue;
+				}
+				path.add(child);
+				Deque<Board> result = dfs(child, path, limit -1);
+				if (result == null) {
+					cutOffOccurred = true;
+				} else if (result.getLast().isSolved()) {
+					return result;
+				}
+				path.removeLast();
+			}
+			if (cutOffOccurred) {
+				return null;
+			} else {
+				return null;
+			}
+		}
+	}
+
+	private static boolean is_in_deque(Deque<Board> path, Board child) {
+		for (Board node: path) {
+			if (Arrays.equals(node.board, child.board)) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	private static Deque<Board> idfs(Board curBoard, Deque<Board> path) {
