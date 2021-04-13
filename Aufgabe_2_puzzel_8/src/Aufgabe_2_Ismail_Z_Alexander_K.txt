@@ -41,5 +41,6 @@ a)Implementieren Sie Suchverfahren für das 8-Puzzle in zwei Varianten:
 •A* mit einer der Heuristiken aus Aufgabe 2.Gerne dürfen Sie auch eine andere Heuristik einsetzen.
 Ausgangspunkt ist die in der Vorlesung besprochene uniforme Kostensuche auf S. 2-42, die um eine Heuristik erweitert wird.
 b)Testen  Sie  IhreSuchverfahrenfür  zufällig  generierte  Startzustände.  Beachten  Sie  dabei  die Paritätsüberlegung in Aufgabe 1.
-c)Bestimmen Sie die Anzahl der vom Suchverfahren generierten Zuständeund die Länge der Lösungsfolge für verschiedene Startzustände.
-d)Sind Ihre Zugfolgen optimal?Wenn ja, warum?e)Welches  Problem könnteentstehen  (nicht  ausprobieren!),  falls  A*  für  die  Lösung  des  15-Puzzle eingesetzt werden würde?
+c)Bestimmen Sie die Anzahl der vom Suchverfahren generierten Zustände und die Länge der Lösungsfolge für verschiedene Startzustände.
+d)Sind Ihre Zugfolgen optimal?Wenn ja, warum?
+e)Welches  Problem könnteentstehen  (nicht  ausprobieren!),  falls  A*  für  die  Lösung  des  15-Puzzle eingesetzt werden würde?
