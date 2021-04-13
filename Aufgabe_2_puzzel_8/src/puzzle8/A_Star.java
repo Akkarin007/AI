@@ -57,7 +57,7 @@ public class A_Star {
 
     public static Deque<Board> getPred(Board endBoard) {
         Deque<Board> path = new LinkedList<>();
-
+        path.add(endBoard);
         for (Board next = pred.get(endBoard); next != null; next = pred.get(next)){
             path.add(next);
         }
