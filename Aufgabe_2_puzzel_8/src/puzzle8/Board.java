@@ -25,17 +25,17 @@ public class Board {
      * Generiert ein zufälliges Board.
      */
     public Board() {
-        Random rand = new Random();
-        LinkedList<Integer> list = new LinkedList<>();
-        int count = 0;
-        do {
-            int number = rand.nextInt(N + 1);
-            if (!list.contains(number)) {
-                this.board[count] = number;
-                list.add(number);
-                count += 1;
-            }
-        } while (list.size() < N + 1);
+            Random rand = new Random();
+            LinkedList<Integer> list = new LinkedList<>();
+            int count = 0;
+            do {
+                int number = rand.nextInt(N + 1);
+                if (!list.contains(number)) {
+                    this.board[count] = number;
+                    list.add(number);
+                    count += 1;
+                }
+            } while (list.size() < N + 1);
     }
 
     /**
