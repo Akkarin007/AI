@@ -23,9 +23,6 @@ public class Puzzle8 {
 			n = res == null ? -1 : res.size();
 			System.out.println("Anz.Zuege: " + n + ": " + res);
 		}
-		/*
-
-	 	*/
 	}
 
 }
