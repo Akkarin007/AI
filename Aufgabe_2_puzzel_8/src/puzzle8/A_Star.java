@@ -1,9 +1,6 @@
 package puzzle8;
 
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Ihr Name
@@ -61,10 +58,8 @@ public class A_Star {
     public static Deque<Board> getPred(Board endBoard) {
         Deque<Board> path = new LinkedList<>();
 
-        Board nextBoard = pred.get(endBoard);
-        while(nextBoard != null){
-            nextBoard = pred.get(nextBoard);
-            path.addFirst(nextBoard);
+        for (Board next = pred.get(endBoard); next != null; next = pred.get(next)){
+            path.add(next);
         }
 
         return path;
