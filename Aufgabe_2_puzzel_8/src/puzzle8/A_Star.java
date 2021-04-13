@@ -65,4 +65,8 @@ public class A_Star {
         return path;
     }
 
+    public static int getSize() {
+        return cost.size();
+    }
+
 }

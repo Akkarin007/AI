@@ -19,6 +19,7 @@ public class Puzzle8 {
             Deque<Board> res = A_Star.aStar(b);
             int n = res == null ? -1 : res.size();
             System.out.println("Anz.Zuege: " + n + ": " + res);
+            System.out.println("Anz.Zustände: " + A_Star.getSize());
 
             res = IDFS.idfs(b);
             n = res == null ? -1 : res.size();
