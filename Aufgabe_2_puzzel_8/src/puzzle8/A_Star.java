@@ -33,14 +33,14 @@ public class A_Star {
             closedList.add(parent);
 
             for (Board childBoard : parent.possibleActions()) {
-                pred.put(childBoard, parent);
+
                 Integer parentCost = cost.get(parent);
 
                 if (openList.get(childBoard) == null && !closedList.contains(childBoard)) {
                     Integer newPathCost = parentCost + 1;
                     cost.put(childBoard, newPathCost);
                     openList.add(childBoard, newPathCost + childBoard.h2());
-
+                    pred.put(childBoard, parent);
                 } else if (openList.get(childBoard) != null) {
                     Integer currChildCost = cost.get(childBoard);
                     Integer newPathCost = parentCost + 1;
