@@ -11,6 +11,8 @@ import java.util.LinkedList;
  */
 public class IDFS {
 
+	private static int size = 0;
+
 	private static Deque<Board> dfs(Board curBoard, Deque<Board> path, int limit) {
 		if (curBoard.isSolved()) {
 			return path; 			// Lösung
@@ -22,6 +24,7 @@ public class IDFS {
 				if (is_in_deque(path, child)) {
 					continue;
 				}
+				size++;
 				path.add(child);
 				Deque<Board> result = dfs(child, path, limit -1);
 				if (result == null) {
@@ -31,12 +34,12 @@ public class IDFS {
 				}
 				path.removeLast();
 			}
-			if (cutOffOccurred) {
-				return null;
-			} else {
-				return null;
-			}
+			return null;
 		}
+	}
+
+	public static int getSize() {
+		return size;
 	}
 
 	private static boolean is_in_deque(Deque<Board> path, Board child) {

@@ -24,6 +24,7 @@ public class Puzzle8 {
             res = IDFS.idfs(b);
             n = res == null ? -1 : res.size();
             System.out.println("Anz.Zuege: " + n + ": " + res);
+            System.out.println("Anz.Zustände: " + IDFS.getSize());
         }
     }
 }

@@ -33,7 +33,6 @@ public class A_Star {
             closedList.add(parent);
 
             for (Board childBoard : parent.possibleActions()) {
-
                 Integer parentCost = cost.get(parent);
 
                 if (openList.get(childBoard) == null && !closedList.contains(childBoard)) {
