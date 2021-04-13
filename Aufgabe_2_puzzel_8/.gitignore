@@ -76,7 +76,7 @@ fabric.properties
 ### Java template
 # Compiled class file
 *.class
-out
+out/*
 
 # Log file
 *.log
