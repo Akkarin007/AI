@@ -23,6 +23,7 @@ public class MinMax {
         int actionIndex = boards.indexOf(action);
         System.out.println("size: " + size);
         System.out.println("action: " + actionIndex);
+        size = 0;
         return actionIndex;
     }
 
