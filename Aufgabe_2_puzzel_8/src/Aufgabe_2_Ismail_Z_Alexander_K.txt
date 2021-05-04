@@ -17,7 +17,7 @@ A2:
 a) Für einen Zustand z ist h1(z) die Anzahl der falsch platzierten Steine in Bezug auf den
     Zielzustand. In Abb. 1 ist h1(S) = 8. Wieso ist h1 eine monotone Heuristik?
 
-    -> Bei einer monotonen Heuristik sind die Were von f(n) entlang eines suchpfades monoton steigend.
+    -> Bei einer monotonen Heuristik sind die Werte von f(n) entlang eines such pfades monoton steigend.
         f(A) <= f(B) <= f(C) <= ... (f ist monoton)
 
 b) Für einen Zustand z ist h2(z) die Summe der Manhattan-Distanzen der Steine von ihren
@@ -32,7 +32,7 @@ b) Für einen Zustand z ist h2(z) die Summe der Manhattan-Distanzen der Steine v
 
 c) Wieso ist h1(n) ≤ h2(n)? Welche Heuristik ist also besser?
     Durch die Zielgerichtete berechnung von den Zuständen lässt sich der Zielzustand besser eingrenzen.
-    Je schärfer die Heuristik ist(d.h. je keiner h*(n) –h(n) ) desto zielgerichteter ist die Suche. Konzentrische Kreise werden schmäler.
+    Je schärfer die Heuristik ist(d.h. je kleiner h*(n) –h(n) ) desto zielgerichteter ist die Suche. Konzentrische Kreise werden schmäler.
 
 d) Implementieren Sie beide Heuristiken.
     siehe Board.java
@@ -71,10 +71,10 @@ Anz.Zustände: 869523
 
 d) Sind Ihre Zugfolgen optimal?Wenn ja, warum?
 
-    Bei einer monotonen Heuristik haben die von A* expandierten Knoten monoton steigende f-Werte.Damit ist für jeden expandierten Knoten nder gefundene Pfad nach nauch optimal.
-    A* ist mit einer monotonen Heuristik auch vollständig, sofern der Verzweigungsfaktor b endlich ist und ein ε> 0 existiert, so dass alle Aktionskosten εüberschritten werden.
+    Bei einer monotonen Heuristik haben die von A* expandierten Knoten monoton steigende f-Werte. Damit ist für jeden expandierten Knoten n der gefundene Pfad nach n auch optimal.
+    A* ist mit einer monotonen Heuristik auch vollständig, sofern der Verzweigungsfaktor b endlich ist und ein ε > 0 existiert, so dass alle Aktionskosten ε überschritten werden.
 
-e)Welches  Problem könnteentstehen  (nicht  ausprobieren!),  falls  A*  für  die  Lösung  des  15-Puzzle eingesetzt werden würde?
+e)Welches  Problem könnte entstehen  (nicht  ausprobieren!),  falls  A*  für  die  Lösung  des  15-Puzzle eingesetzt werden würde?
 
     (3)Laufzeit-und Speicherbedarf sind weiterhin exponentiell. Jedoch hat die Heuristik einen sehr großen Einfluss auf die Komplexität.
     => Laufzeit- und Speicherbedarf nimmt exponentiell zu, da es mehr zustände gibt.
