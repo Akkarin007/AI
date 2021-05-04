@@ -362,6 +362,10 @@ public class KalahBoard {
 	public int readAction() {
 		System.out.print(ANSI_BLUE + curPlayer + " spielt Mulde: ");
 
+		if(curPlayer == APlayer) {
+			return MinMax.miniMax(this, 7);
+		}
+
 		while (in.hasNextLine()) {
 			String line = in.nextLine();
 			if (line.equals("quit")) {
