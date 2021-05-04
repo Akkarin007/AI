@@ -2,7 +2,7 @@ package Kalah;
 
 import java.util.*;
 
-public class MinMax {
+public class MiniMax {
 
 
     private static int size = 0;
@@ -15,7 +15,11 @@ public class MinMax {
         for (KalahBoard b : boards) {
             int temp = v;
             size++;
-            v = Integer.max(v, min(b, depth - 1));
+            if(b.isBonus()){
+                v = Integer.max(v, max(b, depth - 1));
+            } else {
+                v = Integer.max(v, min(b, depth - 1));
+            }
             if (temp != v){
                 action = b;
             }
