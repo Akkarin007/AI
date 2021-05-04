@@ -1,6 +1,6 @@
 package Kalah;
 
-import java.util.List;
+import java.util.*;
 
 public class MinMax {
 
@@ -52,5 +52,4 @@ public class MinMax {
         }
         return v;
     }
-
 }

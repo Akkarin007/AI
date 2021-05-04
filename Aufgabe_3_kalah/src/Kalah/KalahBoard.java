@@ -363,7 +363,7 @@ public class KalahBoard {
 		System.out.print(ANSI_BLUE + curPlayer + " spielt Mulde: ");
 
 		if(curPlayer == APlayer) {
-			return Alpha_Beta_Pruning.miniMax(this, 7);
+			return Alpha_Beta_Pruning_Heuristic.miniMax(this, 7);
 		}
 
 		while (in.hasNextLine()) {
