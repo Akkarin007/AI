@@ -66,9 +66,6 @@ public class Alpha_Beta_Pruning_Heuristic {
         List<KalahBoard> sorted_list = new LinkedList<>();
         while (true) {
             if (tmp_list.size() == 0) {
-                for (KalahBoard x : sorted_list) {
-                    System.out.print(maximizedPlayer + " _> "+ x.getAKalah() + " \n");
-                }
                 return sorted_list;
             }
             KalahBoard tmp_board = tmp_list.get(0);
