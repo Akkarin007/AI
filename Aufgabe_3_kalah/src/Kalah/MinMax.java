@@ -11,7 +11,7 @@ public class MinMax {
 
         int v = Integer.MIN_VALUE;
         List<KalahBoard> boards = board.possibleActions();
-        KalahBoard action = boards.get(0);
+        KalahBoard action = null;
         for (KalahBoard b : boards) {
             int temp = v;
             size++;
@@ -29,7 +29,7 @@ public class MinMax {
 
     private static int min(KalahBoard board, int depth) {
         if (depth == 0 || board.isFinished()){
-            return board.getBKalah();
+            return board.getAKalah();
         }
         int v = Integer.MAX_VALUE;
         for (KalahBoard b : board.possibleActions()) {
@@ -42,7 +42,7 @@ public class MinMax {
     private static int max(KalahBoard board, int depth) {
 
         if (depth == 0 || board.isFinished()){
-            return board.getAKalah();
+            return board.getBKalah();
         }
         int v = Integer.MIN_VALUE;
         for (KalahBoard b : board.possibleActions()) {

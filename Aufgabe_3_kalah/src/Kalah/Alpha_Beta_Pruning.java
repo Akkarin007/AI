@@ -29,7 +29,7 @@ public class Alpha_Beta_Pruning {
 
     private static int min(KalahBoard board, int alpha, int beta, int depth) {
         if (depth == 0 || board.isFinished()){
-            return board.getBKalah();
+            return board.getAKalah();
         }
         int v = Integer.MAX_VALUE;
         for (KalahBoard b : board.possibleActions()) {
@@ -46,7 +46,7 @@ public class Alpha_Beta_Pruning {
     private static int max(KalahBoard board, int alpha, int beta, int depth) {
 
         if (depth == 0 || board.isFinished()){
-            return board.getAKalah();
+            return board.getBKalah();
         }
         int v = Integer.MIN_VALUE;
         for (KalahBoard b : board.possibleActions()) {
