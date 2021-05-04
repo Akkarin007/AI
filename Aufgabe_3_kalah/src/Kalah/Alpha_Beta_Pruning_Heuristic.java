@@ -16,7 +16,11 @@ public class Alpha_Beta_Pruning_Heuristic {
         for (KalahBoard b : boards) {
             int temp = v;
             size++;
-            v = Integer.max(v, min(b, Integer.MAX_VALUE, Integer.MIN_VALUE,depth - 1));
+            if(b.isBonus()){
+                v = Integer.max(v, max(b, Integer.MAX_VALUE, Integer.MIN_VALUE,depth - 1));
+            } else {
+                v = Integer.max(v, min(b, Integer.MAX_VALUE, Integer.MIN_VALUE,depth - 1));
+            }
             if (temp != v){
                 action = b;
             }
@@ -35,7 +39,11 @@ public class Alpha_Beta_Pruning_Heuristic {
         int v = Integer.MAX_VALUE;
         for (KalahBoard b : heuristic(board, false)) {
             size++;
-            v = Integer.min(v, max(b, alpha, beta, depth - 1));
+            if(b.isBonus()){
+                v = Integer.min(v, min(b, alpha, beta, depth - 1));
+            } else {
+                v = Integer.min(v, max(b, alpha, beta, depth - 1));
+            }
             if (v <= alpha) {
                 return v; // Alpha-Cutoff
             }
@@ -52,7 +60,11 @@ public class Alpha_Beta_Pruning_Heuristic {
         int v = Integer.MIN_VALUE;
         for (KalahBoard b : heuristic(board, true)) {
             size++;
-            v = Integer.max(v, min(b, alpha, beta, depth - 1));
+            if(b.isBonus()){
+                v = Integer.max(v, max(b, alpha, beta,depth - 1));
+            } else {
+                v = Integer.max(v, min(b, alpha, beta,depth - 1));
+            }
             if (v >= beta) {
                 return v; // Beta-Cutoff
             }
