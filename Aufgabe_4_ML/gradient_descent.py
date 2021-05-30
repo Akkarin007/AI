@@ -32,16 +32,14 @@ b = 100
 y_hat = a*x_sub + b
 r = (y_sub - y_hat)
 MSE = np.sum(np.square(r)) / len(y_sub)
-MSE
-
+print(MSE)
 
 a = 1
 b = 100
 y_hat = a*x + b
 r = (y - y_hat)
 MSE = np.sum(np.square(r)) / len(y)
-MSE
-
+print(MSE)
 
 a = 0.9                            # try a diffrent value for a here that minimizes the MSE
 b = 101                            # try a diffrent value for b here that minimizes the MSE
@@ -49,7 +47,7 @@ b = 101                            # try a diffrent value for b here that minimi
 y_hat = a*x + b
 r = (y - y_hat)
 MSE = np.sum(np.square(r)) / len(y)
-MSE
+print(MSE)
 
 
 a_hat = np.sum((x-np.mean(x))*((y-np.mean(y)))) / (np.sum(np.square(x-np.mean(x))))
@@ -60,6 +58,7 @@ b = b_hat
 y_hat = a*x + b
 r = (y - y_hat)
 MSE = np.sum(r**2) / len(y)
+print(MSE)
 
 print("slope : a_hat = " ,a_hat)
 print("intercept : b_hat = " ,b_hat)
@@ -70,7 +69,8 @@ b = 87.6
 a = np.arange(-1, 2, 0.02)
 MSE=np.zeros(len(a))
 for i in range(0,len(a)):
-  MSE[i] =  np.mean(np.square(y-(a[i] * x + b)))
+  MSE[i] = np.mean(np.square(y-(a[i] * x + b)))
+print(MSE)
 
 
 plt.plot(a,MSE)
