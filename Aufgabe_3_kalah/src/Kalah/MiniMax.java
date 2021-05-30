@@ -39,7 +39,11 @@ public class MiniMax {
         int v = Integer.MAX_VALUE;
         for (KalahBoard b : board.possibleActions()) {
             size++;
-            v = Integer.min(v, max(b, depth - 1));
+            if(b.isBonus()){
+                v = Integer.min(v, min(b, depth - 1));
+            } else {
+                v = Integer.min(v, max(b, depth - 1));
+            }
         }
         return v;
     }
@@ -52,7 +56,11 @@ public class MiniMax {
         int v = Integer.MIN_VALUE;
         for (KalahBoard b : board.possibleActions()) {
             size++;
-            v = Integer.max(v, min(b, depth - 1));
+            if(b.isBonus()){
+                v = Integer.max(v, max(b, depth - 1));
+            } else {
+                v = Integer.max(v, min(b, depth - 1));
+            }
         }
         return v;
     }
